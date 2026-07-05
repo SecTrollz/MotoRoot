@@ -1,4 +1,4 @@
- # MotoRoot
+# MOTO_ROOT
 
 **A no‑compromise, end‑to‑end root automation script for the Motorola G 2022,  
 run entirely from an unrooted Pixel 9a using Termux.**
@@ -31,7 +31,7 @@ run entirely from an unrooted Pixel 9a using Termux.**
 ## Features
 
 - **Zero‑touch pre‑flight guide** – walks you through enabling USB Debugging, OEM Unlocking, accepting RSA keys, and verifying the USB data cable.
-- **Automatic firmware discovery** – tries three HTTPS mirrors (lolinet, firmware.center, motostockrom); falls back to a user‑supplied URL if needed.
+- **Automatic firmware discovery** – tries three HTTPS mirrors ([lolinet](https://mirrors.lolinet.com/firmware/lenomola), [firmware.center](https://firmware.center/firmware/Motorola), [motostockrom](https://motostockrom.com/files/firmware)); falls back to a user‑supplied URL if needed.
 - **Mandatory SHA‑256 checksum verification** – the script downloads the `.sha256` file from the mirror and aborts on mismatch or download failure. An emergency `--skip-checksum` flag exists for unsupported mirrors. Note: this catches corruption and transfer errors, not a compromised mirror serving a matching hash for tampered firmware — see [Security & Integrity](#security--integrity).
 - **Strict HTTPS + TLS 1.2+** – all downloads use strong ciphers first, then fall back to secure defaults, with connect and max-time limits so a dead mirror fails fast instead of hanging.
 - **Bootloader unlock** – with double‑confirmation, silent unlock code input, and resumable state. The script now aborts cleanly (rather than silently continuing) if you decline the unlock or the input is interrupted.
@@ -49,11 +49,11 @@ run entirely from an unrooted Pixel 9a using Termux.**
 
 ## Prerequisites
 
-1. **Termux** installed on the Pixel 9a (from F‑Droid or GitHub, not the Play Store).  
+1. **[Termux](https://termux.com/)** installed on the Pixel 9a (from [F‑Droid](https://f-droid.org/packages/com.termux/) or [GitHub](https://github.com/termux/termux-app), not the Play Store).  
 2. **Motorola G 2022** with an unlockable bootloader (most retail models).  
 3. A **USB data cable** (not charge‑only).  
 4. The **Magisk app** installed on the Motorola (APK from the [official GitHub](https://github.com/topjohnwu/Magisk)).  
-5. The **unlock code** from Motorola's bootloader unlock portal (only if you plan to unlock the bootloader; the script will ask when needed).
+5. The **unlock code** from [Motorola's bootloader unlock portal](https://motorola-global-portal.custhelp.com/app/standalone/bootloader/unlock-your-device-a) (only if you plan to unlock the bootloader; the script will ask when needed).
 
 ---
 
@@ -78,7 +78,7 @@ run entirely from an unrooted Pixel 9a using Termux.**
    ```bash
    ./motoroot.sh
    ```
-   The script will install all necessary dependencies (wget, unzip, curl, termux-adb-fastboot) automatically.
+   The script will install all necessary dependencies (wget, unzip, curl, [termux-adb-fastboot](https://github.com/nohajc/termux-adb)) automatically.
 
 ---
 
@@ -112,7 +112,7 @@ Typical root procedure: just run `./motoroot.sh` without any arguments and follo
 3. **Push boot.img**
    Sends the stock boot image to the Motorola's storage (external SD card preferred, internal fallback).
 4. **Magisk patching**
-   - Checks whether Magisk is installed on the phone.
+   - Checks whether [Magisk](https://github.com/topjohnwu/Magisk) is installed on the phone.
    - Instructs you to patch the image using Magisk.
    - Automatically locates and pulls the patched `magisk_patched_*.img` from the device.
    - Validates the boot image magic.
@@ -170,7 +170,7 @@ To completely start over, reset the state:
 
 | Problem | Solution |
 |---|---|
-| `termux-adb` or `termux-fastboot` not found | The script installs them automatically; if that fails, run: `curl -sS https://raw.githubusercontent.com/nohajc/termux-adb/master/install.sh \| bash` |
+| `termux-adb` or `termux-fastboot` not found | The script installs them automatically; if that fails, run the [nohajc/termux-adb](https://github.com/nohajc/termux-adb) install script: `curl -sS https://raw.githubusercontent.com/nohajc/termux-adb/master/install.sh \| bash` |
 | ADB shows unauthorized | On the Motorola, tap "Always allow" and accept the RSA prompt. |
 | ADB devices list is empty | Make sure USB Debugging is ON, the cable supports data, and you gave Termux storage permission. Try re‑connecting the cable. |
 | Firmware auto‑discovery fails | Enter a model string like `moto_g_power_2022`, or manually provide an HTTPS URL. |
@@ -202,7 +202,7 @@ Pull requests, bug reports, and feature suggestions are welcome! Please test on 
 
 ## License
 
-This project is licensed under the GNU General Public License v3.0. See the LICENSE file for details.
+This project is licensed under the [GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0.html). See the LICENSE file for details.
 
 ---
 
@@ -214,10 +214,10 @@ This script is provided as‑is, without any warranty. Rooting voids your warran
 
 ## Acknowledgements
 
-- topjohnwu for Magisk
-- nohajc for termux-adb-fastboot
-- The Termux community
-- The firmware mirror maintainers
+- [topjohnwu](https://github.com/topjohnwu) for [Magisk](https://github.com/topjohnwu/Magisk)
+- [nohajc](https://github.com/nohajc) for [termux-adb-fastboot](https://github.com/nohajc/termux-adb)
+- The [Termux](https://termux.com/) community
+- The firmware mirror maintainers: [lolinet](https://mirrors.lolinet.com/), [firmware.center](https://firmware.center/), [motostockrom](https://motostockrom.com/)
 
 ---
 
