@@ -148,7 +148,7 @@ _verify_checksum() {
     log_warn "corruption/transfer errors, NOT a compromised mirror serving a matching evil hash."
 
     if ${SKIP_CHECKSUM:-false}; then
-        log_warn "FUCK, A FUCKING ERROR SHIT !!!!!  --skip-checksum used: skipping integrity verification."
+        log_warn "FUCK, A FUCKING ERROR SHIT OR A SILLY SKIPPED CHECKSUM!!!!!  --skip-checksum used: skipping integrity verification."
         return 0
     fi
 
