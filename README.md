@@ -59,16 +59,16 @@ run entirely from an unrooted android thats compatible with termux-adb/termux-fa
 
 ## Installation
 
-1. Open Termux on the Pixel 9a and run:
+1. Open Termux on the host android and run:
    ```bash
    termux-setup-storage
    ```
-   Grant storage permission when prompted.
+   Grant storage permission when prompted. (script will re-do this again) 
 
 2. Download the script:
    ```bash
-   curl -o motoroot.sh \
-        https://raw.githubusercontent.com/YOUR_USERNAME/MOTO_ROOT/main/motoroot.sh
+   git clone https://github.com/SecTrollz/MotoRoot.git
+   cd MotoRoot
    ```
 3. Make it executable:
    ```bash
