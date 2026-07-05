@@ -2,7 +2,7 @@
 # =============================================================================
 #  MOTO_ROOT – v3.5 (FINAL)
 #  ============================================================================
-#  Purpose : Root Motorola G 2022 from an unrooted Pixel 9a (Termux)
+#  Purpose : Root Motorola G 2022 from an unrooted android (originally used a Pixel 9a) inside of Termux! 
 #  Security : HTTPS enforced, TLS 1.2+, automatic SHA‑256 verification,
 #             unlock code masked, pre‑flight guide.
 #  Resilience : State tracking, flash retries, boot‑image magic check,
