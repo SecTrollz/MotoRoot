@@ -1,7 +1,7 @@
 # MotoRoot
 
 **A no‑compromise, end‑to‑end root automation script for the Motorola G 2022,  
-run entirely from an unrooted Pixel 9a using Termux.**
+run entirely from an unrooted android thats compatible with termux-adb/termux-fastboot.**
 
 [![ShellCheck](https://img.shields.io/badge/ShellCheck-passing-brightgreen)](https://www.shellcheck.net/)
 [![Platform](https://img.shields.io/badge/platform-Termux%20%7C%20Android-brightgreen)](https://termux.com/)
