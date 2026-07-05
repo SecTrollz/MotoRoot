@@ -1,4 +1,4 @@
- # MotoRoto
+ # MotoRoot
 
 **A no‑compromise, end‑to‑end root automation script for the Motorola G 2022,  
 run entirely from an unrooted Pixel 9a using Termux.**
